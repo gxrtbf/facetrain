@@ -1,0 +1,36 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>焉知几何？</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/note.css' %}">
+    <style>
+        video, canvas {
+            position: absolute;
+        }
+  </style>
+</head>  
+<body>  
+    <div class="container-fluid contents">
+        <div class="conrow" style="margin-top: 40px; margin-bottom: 15px;text-align: center;">
+            <p style="font-size: 25px;"> 焉知几何？ </p>
+        </div>
+        <div class="conrow">
+            <video id="video" width="320" height="240" preload autoplay loop muted></video>
+            <canvas id="canvas" width="320" height="240"></canvas>
+            <canvas id="canvas-temp" width="320" height="240" hidden="true"></canvas>
+            <canvas id="canvas-sub" width="168" height="195" hidden="true"></canvas>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/submit.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tracking-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/face-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+</body>
+<html> 

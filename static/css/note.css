@@ -1,0 +1,28 @@
+.contents {
+	width: 100%;
+	background: url(../image/bg.jpg);
+	min-height: 1000px;
+}
+.conrow {
+	width: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.bottom_normal{
+	border: 1px solid #5bc0de;
+	padding: 0 0;
+	width: 33.3%; 
+	height: 50%; 
+	float: left; 
+	margin: auto auto;
+}
+
+.bottom_main{
+	border: 2px solid #d9534f;
+	padding: 0 0;
+	width: 33.3%; 
+	height: 50%; 
+	float: left; 
+	margin: auto auto;
+}

@@ -1,0 +1,106 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>注册</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/note.css' %}">
+    <style>
+        video, canvas {
+            position: absolute;
+        }
+  </style>
+</head>  
+<body>  
+    <div class="container-fluid">
+        <div class="row" style="text-align: center;">
+            <h2> 注册 </h2>
+        </div>
+        <div class="row">
+            <div class="modal fade bd-example-modal-sm"  id="myModal" role="dialog" data-backdrop="false"  aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content"">
+                        <span class="text-center mb-0">
+                            <i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
+                            <div id='info' style="color: #000; font-size: 20px;"></div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-body" id="canvas-container" style="height: 400px;">
+                        <video id="video" preload autoplay loop muted style='margin: auto auto;'></video>
+                        <canvas id="canvas" style="border: 2px solid #5bc0de; margin: auto auto">
+                        <canvas id="temp" ></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-8" style="height: 400px;">
+                <div class="col-md-4 col-lg-4" style="height: 100%">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label> 名称 </label>
+                                <input type="text" class="form-control" id="username" placeholder="name">
+                            </div>
+                            <div class="form-group">
+                                <label> 角色 </label>
+                                <select class="form-control">
+                                  <option> 管理员 </option>
+                                  <option> 用户 </option>
+                                  <option> 游客 </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label> 其他 </label>
+                                <input type="text" class="form-control" id="other" placeholder="other">
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-success btn-sm btn-block" id='preview' onclick="preview()"> 上一张 </button>
+                                <button type="button" class="btn btn-success btn-sm btn-block" id='next' onclick="next()"> 下一张 </button>
+                                <button type="button" class="btn btn-info btn-sm btn-block" id='qxok' onclick="qxok()"> 拍摄 </button>
+                                <button type="button" class="btn btn-primary btn-sm btn-block" id='submit' onclick="submitData()"> 提交 </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-8" style="height: 100%">
+                    <div class="panel panel-default" style="height: 100%">
+                        <div class="panel-body bottom_normal" id='canvas-temp-container1'>
+                            <canvas id="canvas-temp1"  width="168" height="195"></canvas>
+                        </div>
+                        <div class="panel-body bottom_normal" id='canvas-temp-container2'>
+                            <canvas id="canvas-temp2"></canvas>
+                        </div>
+                        <div class="panel-body bottom_normal" id='canvas-temp-container3'>
+                            <canvas id="canvas-temp3"></canvas>
+                        </div>
+                        <div class="panel-body bottom_normal" id='canvas-temp-container4'>
+                            <canvas id="canvas-temp4"></canvas>
+                        </div>
+                        <div class="panel-body bottom_normal" id='canvas-temp-container5'>
+                            <canvas id="canvas-temp5"></canvas>
+                        </div>
+                        <div class="panel-body bottom_normal" id='canvas-temp-container6'>
+                            <canvas id="canvas-temp6"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/submit.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/tracking-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/face-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/register.js' %}"></script>
+</body>
+<html> 
